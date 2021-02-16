@@ -32,7 +32,7 @@ namespace ExperimentWithControls
 
         private void numberTextbox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = LinkTarget.tryparse(e.Text, out int result);
+            e.Handled = !int.TryParse(e.Text, out int result);
         }
 
         private void smallSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
